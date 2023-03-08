@@ -3,7 +3,7 @@ pipeline {
     environment {
         IMAGE_REPO_NAME="dvwapub"
         //REPLACE XXX WITH YOUR STUDENT NUMBER
-        IMAGE_TAG= "std32"
+        IMAGE_TAG= "stdXXX"
         REPOSITORY_URI = "public.ecr.aws/f9n2h3p5/dvwapub"
         AWS_DEFAULT_REGION = "us-east-1"
     }
@@ -67,6 +67,6 @@ pipeline {
                  sh 'docker pull registry.fortidevsec.forticloud.com/fdevsec_dast:latest'
                  sh 'docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_dast:latest'
             }
-       }
+        }
     }
 }
